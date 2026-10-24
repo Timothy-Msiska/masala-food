@@ -1,0 +1,53 @@
+import { Globe2, Handshake, LockKeyhole, Settings2 } from 'lucide-react'
+import { PageShell } from '@/components/page-shell'
+import { AnimatedReveal } from '@/components/animated-reveal'
+
+export default function AboutPage() {
+  return (
+    <PageShell
+      eyebrow="About MASALA FOOD"
+      title={<>Trade built on <em>trust.</em></>}
+      intro="We connect producers, buyers and logistics partners through a configurable agricultural trade network across Africa and beyond."
+    >
+      <section className="mx-auto max-w-7xl px-5 pb-24 lg:px-8">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            [Handshake, 'Transparent', 'Clear supply information, quotations and milestones keep every partner aligned.'],
+            [Globe2, 'Connected', 'Bring the right people and pathways together across countries, products, currencies and routes.'],
+            [Settings2, 'Configurable', 'Adapt member categories, fees, commissions, documents and delivery options without hard-coded rules.'],
+            [LockKeyhole, 'Responsible', 'Authentication, role-based access, secure uploads, backups and activity logs protect the network.'],
+          ].map(([Icon, title, text], index) => (
+            <AnimatedReveal key={title as string} effect="fade-up" delay={80 + index * 90} duration={650}>
+              <div className="service-card group h-full">
+                <Icon className="mb-5 text-[#2f7d4a] transition-transform duration-200 group-hover:scale-110" />
+                <h3 className="!mt-0">{title as string}</h3>
+                <p>{text as string}</p>
+              </div>
+            </AnimatedReveal>
+          ))}
+        </div>
+
+        <AnimatedReveal effect="fade-up" delay={200} duration={700}>
+          <div className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_.9fr]">
+            <div>
+              <p className="eyebrow">Built for growth</p>
+              <h2>
+                From Malawi and the DRC to <em>new markets.</em>
+              </h2>
+              <p className="mt-6 leading-7 text-[#6b756e]">
+                MASALA FOOD is designed to scale by country, product, currency, language and route. The platform can support additional regions without replacing the operating model.
+              </p>
+            </div>
+            <div className="border-l border-[#cfd9d1] pl-7">
+              <p className="eyebrow">Our network</p>
+              <p className="text-5xl font-semibold tracking-tight text-[#174d35]">4</p>
+              <p className="mt-2 text-sm text-[#6b756e]">member pathways</p>
+              <p className="mt-7 text-5xl font-semibold tracking-tight text-[#174d35]">10</p>
+              <p className="mt-2 text-sm text-[#6b756e]">recorded order milestones</p>
+            </div>
+          </div>
+        </AnimatedReveal>
+      </section>
+    </PageShell>
+  )
+}
