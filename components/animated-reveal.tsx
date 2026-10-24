@@ -18,7 +18,7 @@ export function AnimatedReveal({
   children,
   effect = 'fade-up',
   delay = 0,
-  duration = 700,
+  duration = 950,
   threshold = 0.12,
   className = '',
   style = {},
@@ -64,14 +64,18 @@ export function AnimatedReveal({
     }
   }, [threshold, once])
 
+  // Paced duration and delay for calmer, more elegant reveals
+  const pacedDuration = Math.round(duration * 1.4)
+  const pacedDelay = Math.round(delay * 1.3)
+
   return (
     <Component
       ref={elementRef}
       className={`reveal-wrapper ${effect} ${isVisible ? 'is-visible' : 'is-hidden'} ${className}`}
       style={{
         ...style,
-        '--reveal-delay': `${delay}ms`,
-        '--reveal-duration': `${duration}ms`,
+        '--reveal-delay': `${pacedDelay}ms`,
+        '--reveal-duration': `${pacedDuration}ms`,
       } as React.CSSProperties}
     >
       {children}
@@ -91,10 +95,10 @@ interface StaggerContainerProps {
 export function StaggerContainer({
   children,
   delayBase = 0,
-  staggerInterval = 100,
+  staggerInterval = 140,
   className = '',
   effect = 'fade-up',
-  duration = 650,
+  duration = 900,
 }: StaggerContainerProps) {
   const childArray = React.Children.toArray(children)
 
@@ -126,7 +130,7 @@ export function FadeTransition({
   show,
   children,
   className = '',
-  duration = 240,
+  duration = 380,
   unmountOnExit = true,
 }: FadeTransitionProps) {
   const [shouldRender, setShouldRender] = useState(show)

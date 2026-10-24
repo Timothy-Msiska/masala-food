@@ -76,7 +76,7 @@ export default function MemberPage() {
       intro="Choose the pathway that matches your role. We collect only the information needed to verify your organisation and activate the right workspace permissions."
     >
       <section className="registration-wrap mx-auto max-w-7xl px-5 pb-24 lg:px-8">
-        <AnimatedReveal effect="fade-down" delay={60} duration={600}>
+        <AnimatedReveal effect="fade-down" delay={80} duration={750}>
           <div className="registration-brand">
             <span className="registration-brand-mark" aria-hidden="true">MF</span>
             <div>
@@ -86,13 +86,13 @@ export default function MemberPage() {
           </div>
         </AnimatedReveal>
 
-        <div className={`transition-all duration-200 ${isSwitching ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}>
+        <div className={`transition-all duration-350 ease-out ${isSwitching ? 'opacity-0 scale-[0.98]' : 'opacity-100 scale-100'}`}>
           {!pathway && (
             <div className="registration-grid">
               {(Object.entries(pathways) as [Pathway, (typeof pathways)[Pathway]][]).map(([key, item], index) => {
                 const CardIcon = item.icon
                 return (
-                  <AnimatedReveal key={key} effect="fade-up" delay={80 + index * 90} duration={600}>
+                  <AnimatedReveal key={key} effect="fade-up" delay={100 + index * 110} duration={750}>
                     <button
                       className="pathway-card group w-full"
                       onClick={() => selectPathway(key)}
@@ -101,7 +101,7 @@ export default function MemberPage() {
                         <CardIcon size={20} />
                       </span>
                       <span className="pathway-copy">
-                        <strong className="transition-colors duration-200 group-hover:text-[#174d35]">
+                        <strong className="transition-colors duration-300 group-hover:text-[#174d35]">
                           {item.title}
                         </strong>
                         <small>{item.intro}</small>
@@ -118,7 +118,7 @@ export default function MemberPage() {
           {pathway && active && Icon && (
             <div className="registration-form-card">
               <button className="back-link group" onClick={resetPathway}>
-                <ArrowLeft size={15} className="transition-transform duration-200 group-hover:-translate-x-1" /> Choose another pathway
+                <ArrowLeft size={15} className="transition-transform duration-300 group-hover:-translate-x-1" /> Choose another pathway
               </button>
 
               {submitted ? (
@@ -133,7 +133,7 @@ export default function MemberPage() {
                   </p>
                   <a href="/" className="button button-dark group">
                     Return home{' '}
-                    <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
+                    <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
                   </a>
                 </div>
               ) : (
@@ -183,7 +183,7 @@ export default function MemberPage() {
 
                     <button className="button button-dark group" type="submit">
                       Submit registration{' '}
-                      <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
+                      <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   </form>
                 </>

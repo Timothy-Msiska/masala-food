@@ -25,7 +25,7 @@ export default function HowItWorksPage() {
       <section className="mx-auto max-w-5xl px-5 pb-24 lg:px-8">
         <div className="process-list">
           {steps.map(([number, title, text], i) => (
-            <AnimatedReveal key={number} effect="fade-up" delay={Math.min(i * 60, 400)} duration={650}>
+            <AnimatedReveal key={number} effect="fade-up" delay={Math.min(i * 90, 600)} duration={750}>
               <div className="process-step">
                 <div className="step-number">{number}</div>
                 <div>
@@ -38,7 +38,7 @@ export default function HowItWorksPage() {
           ))}
         </div>
 
-        <AnimatedReveal effect="fade-up" delay={200} duration={650}>
+        <AnimatedReveal effect="fade-up" delay={260} duration={750}>
           <div className="mt-10 rounded-sm border border-[#ecd79e] bg-[#fff8e6] p-6 text-sm leading-6 text-[#6b756e]">
             <strong className="text-[#174d35]">Important:</strong> An enquiry or order does not guarantee stock or constitute final acceptance. Availability, pricing, transport and terms are confirmed through the quotation and approval process.
           </div>
@@ -51,9 +51,9 @@ export default function HowItWorksPage() {
             [PackageCheck, 'Trackable'],
             [Check, 'Settled'],
           ].map(([Icon, label], index) => (
-            <AnimatedReveal key={label as string} effect="fade-up" delay={150 + index * 90} duration={650}>
+            <AnimatedReveal key={label as string} effect="fade-up" delay={180 + index * 120} duration={750}>
               <div className="service-card group h-full">
-                <Icon className="mb-4 text-[#2f7d4a] transition-transform duration-200 group-hover:scale-110" />
+                <Icon className="mb-4 text-[#2f7d4a] transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="!mt-0">{label as string}</h3>
                 <p>Recorded at each milestone.</p>
               </div>

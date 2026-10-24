@@ -16,9 +16,9 @@ export default function SupplierPage() {
             [Camera, 'Rich evidence', 'Upload photos, quality certificates and supporting documents with each listing.'],
             [FileCheck, 'Approval first', 'Update stock or withdraw a listing. Every submission is reviewed before publication.'],
           ].map(([Icon, title, text], index) => (
-            <AnimatedReveal key={title as string} effect="fade-up" delay={80 + index * 90} duration={650}>
+            <AnimatedReveal key={title as string} effect="fade-up" delay={80 + index * 100} duration={750}>
               <div className="service-card group h-full">
-                <Icon className="mb-5 text-[#2f7d4a] transition-transform duration-200 group-hover:scale-110" />
+                <Icon className="mb-5 text-[#2f7d4a] transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="!mt-0">{title as string}</h3>
                 <p>{text as string}</p>
               </div>
@@ -26,10 +26,10 @@ export default function SupplierPage() {
           ))}
         </div>
 
-        <AnimatedReveal effect="fade-up" delay={260} duration={650}>
+        <AnimatedReveal effect="fade-up" delay={300} duration={750}>
           <a href="/become-member" className="button button-dark mt-10 group inline-flex">
             Start supplier registration{' '}
-            <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+            <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </AnimatedReveal>
       </section>

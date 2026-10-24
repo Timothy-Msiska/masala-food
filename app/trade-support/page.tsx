@@ -17,9 +17,9 @@ export default function TradeSupportPage() {
             [CircleDollarSign, 'USD arrangements', 'Support agreed USD payment workflows with clear settlement milestones.'],
             [FileCheck, 'Compliance support', 'Configure document requirements by product category and destination.'],
           ].map(([Icon, title, text], index) => (
-            <AnimatedReveal key={title as string} effect="fade-up" delay={80 + index * 80} duration={650}>
+            <AnimatedReveal key={title as string} effect="fade-up" delay={80 + index * 100} duration={750}>
               <div className="service-card group h-full">
-                <Icon className="mb-5 text-[#2f7d4a] transition-transform duration-200 group-hover:scale-110" />
+                <Icon className="mb-5 text-[#2f7d4a] transition-transform duration-300 group-hover:scale-110" />
                 <h3 className="!mt-0">{title as string}</h3>
                 <p>{text as string}</p>
               </div>
@@ -27,7 +27,7 @@ export default function TradeSupportPage() {
           ))}
         </div>
 
-        <AnimatedReveal effect="fade-up" delay={180} duration={700}>
+        <AnimatedReveal effect="fade-up" delay={260} duration={800}>
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
             <div>
               <p className="eyebrow">Transparent terms</p>
@@ -43,10 +43,10 @@ export default function TradeSupportPage() {
               {['Quotation prepared', 'Terms confirmed', 'Invoice issued', 'Payment reference recorded', 'Transaction completed'].map(
                 (item, i) => (
                   <div className="flex items-center gap-4 border-b border-[#d5e1d6] py-4 text-sm group" key={item}>
-                    <span className="grid h-7 w-7 place-items-center rounded-full bg-[#174d35] text-xs text-white transition-transform duration-200 group-hover:scale-110">
+                    <span className="grid h-7 w-7 place-items-center rounded-full bg-[#174d35] text-xs text-white transition-transform duration-300 group-hover:scale-110">
                       {i + 1}
                     </span>
-                    <span className="transition-colors duration-200 group-hover:text-[#174d35] font-medium">{item}</span>
+                    <span className="transition-colors duration-300 group-hover:text-[#174d35] font-medium">{item}</span>
                   </div>
                 )
               )}
@@ -54,13 +54,13 @@ export default function TradeSupportPage() {
           </div>
         </AnimatedReveal>
 
-        <AnimatedReveal effect="fade-scale" delay={240} duration={750}>
+        <AnimatedReveal effect="fade-scale" delay={340} duration={800}>
           <div className="mt-12 join-section p-8 text-white md:p-12 rounded-sm">
             <p className="eyebrow text-[#e8b44a]">Start a conversation</p>
             <h2 className="text-white">Tell us what you&apos;re looking to trade.</h2>
             <a href="mailto:trade@masalafood.com" className="button button-gold mt-7 group">
               Contact the team{' '}
-              <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </AnimatedReveal>

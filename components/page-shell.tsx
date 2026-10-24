@@ -21,19 +21,19 @@ export function PageShell({
       <SiteHeader />
       <section className="page-hero">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
-          <AnimatedReveal effect="fade-down" delay={50} duration={600}>
+          <AnimatedReveal effect="fade-down" delay={80} duration={750}>
             <p className="eyebrow">{eyebrow}</p>
           </AnimatedReveal>
-          <AnimatedReveal effect="fade-up" delay={120} duration={750}>
+          <AnimatedReveal effect="fade-up" delay={180} duration={850}>
             <h1>{title}</h1>
           </AnimatedReveal>
-          <AnimatedReveal effect="fade-up" delay={200} duration={700}>
+          <AnimatedReveal effect="fade-up" delay={280} duration={800}>
             <p className="page-intro">{intro}</p>
           </AnimatedReveal>
         </div>
       </section>
       
-      <AnimatedReveal effect="fade-in" delay={280} duration={650}>
+      <AnimatedReveal effect="fade-in" delay={380} duration={800}>
         {children}
       </AnimatedReveal>
 
