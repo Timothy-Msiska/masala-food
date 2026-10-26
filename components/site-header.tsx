@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, ChevronDown, Menu, X, Wheat, Search, Truck, Handshake } from 'lucide-react'
+import Image from 'next/image'
 
 const links = [
   ['About us', '/about'],
@@ -35,7 +36,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <a href="/" className="brand-mark" aria-label="Masala Food home"><span>MF</span><strong>MASALA<br />FOOD</strong></a>
+        <a href="/" className="brand-mark" aria-label="Masala Food home"><Image src="/masala-logo.png" alt="" width={48} height={48} priority /><strong>MASALA<br />FOOD</strong></a>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
           <div ref={marketplaceRef} className="nav-dropdown">
             <button className={`nav-link nav-dropdown-trigger ${marketplaceOpen ? 'active' : ''}`} onClick={() => setMarketplaceOpen((open) => !open)} aria-expanded={marketplaceOpen} aria-haspopup="true">Marketplace <ChevronDown size={14} className={marketplaceOpen ? 'rotate-180' : ''} /></button>
