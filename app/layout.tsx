@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: 'Connecting agricultural producers, commercial buyers, and logistics partners through trusted cross-border trade.',
   generator: 'v0.app',
   icons: {
-    icon: '/masala.jpeg',
-    apple: '/masala.jpeg',
+    icon: '/masala-logo.png',
+    apple: '/masala-logo.png',
   },
 }
 
