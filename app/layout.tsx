@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
+import { DashboardStoreProvider } from '@/components/dashboard-store'
 
 export const metadata: Metadata = {
   title: 'MASALA FOOD — Agricultural Trade, Connected',
@@ -39,9 +40,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="antialiased">
-        {children}
+        <DashboardStoreProvider>{children}</DashboardStoreProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
