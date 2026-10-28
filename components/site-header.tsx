@@ -57,7 +57,6 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
         <a href="/" className="brand-mark flex items-center gap-3" aria-label="Masala Food home">
           <Image src="/masala-logo.png" alt="Masala Food" width={56} height={56} priority className="object-contain" />
-          <span className="hidden font-bold tracking-tight text-[#174d35] sm:inline-block text-lg">MASALA FOOD</span>
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Main navigation">
