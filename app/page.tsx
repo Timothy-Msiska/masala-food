@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, Check, Search, ShieldCheck, Truck, X, LayoutDashboard, Bell, Package, FileText, Settings, LogOut, CircleDollarSign, Clock3, ArrowUpRight } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
+import { HeroSection } from '@/components/hero';
 
 const commodities = [
   { name: 'Premium maize', origin: 'Malawi · Central Region', grade: 'Grade A', quantity: '2,400 MT', image: '/masala-hero.png', tag: 'Featured' },
@@ -50,12 +51,7 @@ export default function Page() {
       <SiteHeader />
 
       <section id="top" className="hero-section">
-        <div className="hero-overlay" />
-        <div className="relative z-10 mx-auto grid min-h-[650px] max-w-7xl items-center px-5 py-24 lg:grid-cols-[1.1fr_.9fr] lg:px-8">
-          <div className="hero-copy max-w-2xl"><p className="eyebrow text-[#e8b44a]">Agricultural trade, connected</p><h1>Connecting agricultural supply to <em>global opportunity.</em></h1><p className="hero-text">A trusted platform connecting producers, commercial buyers and logistics partners across Africa and beyond.</p><div className="flex flex-wrap gap-3"><a href="/marketplace" className="button button-gold">Explore marketplace <ArrowRight size={17} /></a><a href="/become-member" className="button button-outline">Become a member</a></div><div className="hero-note"><ShieldCheck size={18} /> Verified trade pathways · Malawi to DRC and beyond</div></div>
-          <div className="hidden lg:block"><div className="hero-card"><div className="flex items-center justify-between"><span className="eyebrow text-[#e8b44a]">Trade pathway</span><span className="status-dot">Live route</span></div><div className="pathway-wave"><span>MWK</span><CurrencyWave /><span>CDF</span></div><div className="route-line"><div className="route-node"><span>MW</span><small>Malawi</small></div><div className="route-track"><span /><span /><span /></div><div className="route-node"><span>DRC</span><small>Democratic Republic of the Congo</small></div></div><div className="mt-7 flex justify-between border-t border-white/15 pt-5 text-sm text-white/70"><span>Cross-border delivery</span><strong className="text-white">Kasumbalesa route</strong></div></div></div>
-        </div>
-        <div className="scroll-cue">Scroll to explore <span /></div>
+        <HeroSection/>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28"><div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-end"><div><p className="eyebrow">A clearer way to trade</p><h2>From harvest to <em>destination.</em></h2></div><p className="max-w-xl text-lg leading-8 text-[#6b756e]">MASALA FOOD makes agricultural trade more transparent, coordinated, and accessible. We bring the right people, products, and pathways together in one professional network.</p></div><div className="mt-16 grid gap-4 md:grid-cols-3"><ServiceCard icon={<ShieldCheck />} number="01" title="Trusted supply" text="Discover verified producers and quality-led commodity listings." /><ServiceCard icon={<Truck />} number="02" title="Coordinated logistics" text="Move goods with clear milestones, documents, and delivery support." /><ServiceCard icon={<Check />} number="03" title="Confident trade" text="Make informed decisions with structured enquiries and quotations." /></div></section>
